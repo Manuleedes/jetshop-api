@@ -12,24 +12,24 @@ public class CouponController {
     @Autowired
     private CouponService couponService;
 
-    @PostMapping("apply_coupon.php")
+    @PostMapping("apply_coupon")
     public Map<String, Object> applyCoupon(@RequestParam String order_id,
             @RequestParam String coupon_code) {
         return couponService.applyCoupon(order_id, coupon_code);
     }
 
-    @PostMapping("remove_coupon.php")
+    @PostMapping("remove_coupon")
     public Map<String, Object> removeCoupon(@RequestParam String order_id,
             @RequestParam(required = false) String coupon_code) {
         return couponService.removeCoupon(order_id, coupon_code);
     }
 
-    @GetMapping("getCouponCode.php")
+    @GetMapping("getCouponCode")
     public Map<String, Object> getActiveCoupons() {
         return couponService.getActiveCoupons();
     }
 
-    @PostMapping("update_coupon_usage.php")
+    @PostMapping("update_coupon_usage")
     public Map<String, Object> updateCouponUsage(@RequestParam String coupon_code) {
         return couponService.updateCouponUsage(coupon_code);
     }

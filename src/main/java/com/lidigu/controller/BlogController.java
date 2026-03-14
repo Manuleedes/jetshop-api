@@ -12,7 +12,7 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
-    @GetMapping("get_blogs.php")
+    @GetMapping("get_blogs")
     public Map<String, Object> getBlogs() {
         return blogService.getBlogs();
     }

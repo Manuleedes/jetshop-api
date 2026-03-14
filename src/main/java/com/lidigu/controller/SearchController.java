@@ -12,7 +12,7 @@ public class SearchController {
     @Autowired
     private SearchService searchService;
 
-    @GetMapping("search.php")
+    @GetMapping("search")
     public Map<String, Object> search(@RequestParam(name = "product_name", defaultValue = "") String productName,
             @RequestParam(name = "rating", required = false) Double rating) {
         return searchService.search(productName, rating);

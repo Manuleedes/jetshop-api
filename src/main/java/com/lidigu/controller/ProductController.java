@@ -12,25 +12,25 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("all_product_list.php")
+    @GetMapping("all_product_list")
     public Object getAllProducts(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int limit) {
         return productService.getAllProducts(page, limit);
     }
 
-    @PostMapping("get_productDetails.php")
+    @PostMapping("get_productDetails")
     public Object getProductDetails(@RequestParam String product_id,
             @RequestParam(required = false) String user_id) {
         return productService.getProductDetails(product_id, user_id);
     }
 
-    @GetMapping("list_products_by_brand.php")
+    @GetMapping("list_products_by_brand")
     public Object listProductsByBrand(@RequestParam Integer brand_id) {
         return productService.listProductsByBrand(brand_id);
     }
 
-    @GetMapping("list_products_by_category.php")
+    @GetMapping("list_products_by_category")
     public Object listProductsByCategory(@RequestParam Integer category_id) {
         return productService.listProductsByCategory(category_id);
     }

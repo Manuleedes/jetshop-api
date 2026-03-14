@@ -13,7 +13,7 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @PostMapping("initiate_payment.php")
+    @PostMapping("initiate_payment")
     public Map<String, Object> initiatePayment(@RequestParam String order_id,
             @RequestParam Long user_id,
             @RequestParam String payment_method,
@@ -22,12 +22,12 @@ public class PaymentController {
         return paymentService.initiatePayment(order_id, user_id, payment_method, amount, currency);
     }
 
-    @PostMapping("create-stripe-intent.php")
+    @PostMapping("create-stripe-intent")
     public Map<String, Object> createStripeIntent(@RequestParam BigDecimal amount, @RequestParam String currency) {
         return paymentService.createStripeIntent(amount, currency);
     }
 
-    @PostMapping("verify_payment.php")
+    @PostMapping("verify_payment")
     public Map<String, Object> verifyPayment(@RequestParam String order_id,
             @RequestParam String transaction_id,
             @RequestParam String status,

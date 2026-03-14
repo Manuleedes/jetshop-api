@@ -14,7 +14,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("get_all_categories.php")
+    @GetMapping("get_all_categories")
     public Object getAllCategories() {
         return categoryService.getAllCategories();
     }

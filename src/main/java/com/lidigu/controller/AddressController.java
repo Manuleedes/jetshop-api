@@ -12,7 +12,7 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
-    @PostMapping("add_address.php")
+    @PostMapping("add_address")
     public Map<String, Object> addAddress(@RequestParam Long user_id,
             @RequestParam String address,
             @RequestParam String city,
@@ -28,17 +28,17 @@ public class AddressController {
                 default_address, google_address);
     }
 
-    @PostMapping("list_addresses.php")
+    @PostMapping("list_addresses")
     public Map<String, Object> listAddresses(@RequestParam Long user_id) {
         return addressService.listAddresses(user_id);
     }
 
-    @PostMapping("delete_address.php")
+    @PostMapping("delete_address")
     public Map<String, Object> deleteAddress(@RequestParam Long address_id) {
         return addressService.deleteAddress(address_id);
     }
 
-    @PostMapping("update_address.php")
+    @PostMapping("update_address")
     public Map<String, Object> updateAddress(@RequestParam Long address_id,
             @RequestParam Long user_id,
             @RequestParam String address,
@@ -55,7 +55,7 @@ public class AddressController {
                 longitude, type, default_address, google_address);
     }
 
-    @PostMapping("setDefaultAddress.php")
+    @PostMapping("setDefaultAddress")
     public Map<String, Object> setDefaultAddress(@RequestParam Long user_id,
             @RequestParam Long address_id) {
         return addressService.setDefaultAddress(user_id, address_id);

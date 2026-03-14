@@ -14,27 +14,27 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping("login.php")
+    @PostMapping("login")
     public Object login(@RequestParam String email, @RequestParam String password) {
         return authService.login(email, password);
     }
 
-    @PostMapping("register.php")
+    @PostMapping("register")
     public Object register(@RequestBody RegisterRequest request) {
         return authService.register(request);
     }
 
-    @PostMapping("verify_otp.php")
+    @PostMapping("verify_otp")
     public Object verifyOtp(@RequestParam String email, @RequestParam String otp) {
         return authService.verifyOtp(email, otp);
     }
 
-    @PostMapping("forgot_password.php")
+    @PostMapping("forgot_password")
     public Object forgotPassword(@RequestParam String email) {
         return authService.forgotPassword(email);
     }
 
-    @PostMapping("reset_password.php")
+    @PostMapping("reset_password")
     public Object resetPassword(@RequestBody ResetPasswordRequest request) {
         return authService.resetPassword(request);
     }

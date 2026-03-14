@@ -12,7 +12,7 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    @PostMapping("add_update_review.php")
+    @PostMapping("add_update_review")
     public Object addUpdateReview(@RequestParam Long user_id,
             @RequestParam String product_id,
             @RequestParam Double rating,

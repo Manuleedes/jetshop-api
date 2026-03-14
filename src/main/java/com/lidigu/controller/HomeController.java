@@ -15,7 +15,7 @@ public class HomeController {
     @Autowired
     private HomeService homeService;
 
-    @GetMapping("get_slider_category_product.php")
+    @GetMapping("get_slider_category_product")
     public Map<String, Object> getHomeData(@RequestParam(name = "user_id", required = false) String userId) {
         return homeService.getHomeData(userId);
     }

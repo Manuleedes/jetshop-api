@@ -13,15 +13,15 @@ public class SliderImage {
     @Column(name = "slider_id")
     private Long sliderId;
 
-    @Column(name = "image_url", columnDefinition = "MEDIUMTEXT", nullable = false)
+    @Column(name = "image_url", columnDefinition = "TEXT", nullable = false)
     private String imageUrl;
 
-    @Column(name = "redirect_url", columnDefinition = "MEDIUMTEXT")
+    @Column(name = "redirect_url", columnDefinition = "TEXT")
     private String redirectUrl;
 
     private String title;
 
-    @Column(name = "description", columnDefinition = "MEDIUMTEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "is_active")

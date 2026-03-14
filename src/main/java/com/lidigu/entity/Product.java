@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Table(name = "products")
 public class Product {
     @Id
+    @Column(name = "product_id")
     private String productId;
 
     @Column(name = "product_name")

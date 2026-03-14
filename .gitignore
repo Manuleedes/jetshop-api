@@ -5,5 +5,4 @@ target/
 *.class
 *.jar
 *.war
-*.ear
-*.log
+*.env

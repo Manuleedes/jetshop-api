@@ -12,12 +12,12 @@ public class WalletController {
     @Autowired
     private WalletService walletService;
 
-    @PostMapping("wallet_history.php")
+    @PostMapping("wallet_history")
     public Map<String, Object> getWalletHistory(@RequestParam String user_id) {
         return walletService.getWalletHistory(user_id);
     }
 
-    @PostMapping("referral_history.php")
+    @PostMapping("referral_history")
     public Map<String, Object> getReferralHistory(@RequestParam String user_id) {
         return walletService.getReferralHistory(user_id);
     }

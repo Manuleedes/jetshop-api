@@ -11,7 +11,6 @@ import java.util.Optional;
 public interface CouponRepository extends JpaRepository<Coupon, Long> {
     Optional<Coupon> findByCouponCodeAndStatus(String couponCode, String status);
 
-    @Query("SELECT c FROM Coupon c WHERE c.status = 'active' AND c.expiryDate >= CURDATE()")
+    @Query("SELECT c FROM Coupon c WHERE c.status = 'active' AND c.expiryDate >= CURRENT_DATE")
     java.util.List<Coupon> findActiveCoupons();
 }
-

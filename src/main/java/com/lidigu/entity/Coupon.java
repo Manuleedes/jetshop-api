@@ -19,7 +19,7 @@ public class Coupon {
 
     private String title;
 
-    @Column(columnDefinition = "MEDIUMTEXT")
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "discount_value")

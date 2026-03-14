@@ -19,7 +19,7 @@ public class Brand {
     @Column(name = "brand_logo")
     private String brandLogo;
 
-    @Column(name = "brand_description", columnDefinition = "MEDIUMTEXT")
+    @Column(name = "brand_description", columnDefinition = "TEXT")
     private String brandDescription;
 
     @Column(name = "website_url")

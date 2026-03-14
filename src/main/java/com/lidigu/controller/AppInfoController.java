@@ -14,7 +14,7 @@ public class AppInfoController {
     @Autowired
     private AppInfoService appInfoService;
 
-    @GetMapping("get_app_info.php")
+    @GetMapping("get_app_info")
     public Map<String, Object> getAppInfo() {
         return appInfoService.getAppInfo();
     }

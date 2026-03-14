@@ -12,29 +12,29 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping("place_order.php")
+    @PostMapping("place_order")
     public Object placeOrder(@RequestBody PlaceOrderRequest data) {
         return orderService.placeOrder(data);
     }
 
-    @PostMapping("getUserOrder.php")
+    @PostMapping("getUserOrder")
     public Object getUserOrders(@RequestParam Long user_id) {
         return orderService.getUserOrders(user_id);
     }
 
-    @PostMapping("cancel_order.php")
+    @PostMapping("cancel_order")
     public Object cancelOrder(@RequestParam Long user_id,
             @RequestParam String order_id) {
         return orderService.cancelOrder(user_id, order_id);
     }
 
-    @PostMapping("GetOrderDetails.php")
+    @PostMapping("GetOrderDetails")
     public Object getOrderDetails(@RequestParam String user_id,
             @RequestParam(required = false) String coupon_code) {
         return orderService.getOrderDetails(user_id, coupon_code);
     }
 
-    @PostMapping("get_placeorder_details.php")
+    @PostMapping("get_placeorder_details")
     public Object getPlaceOrderDetails(@RequestParam String order_id) {
         return orderService.getPlaceOrderDetails(order_id);
     }
