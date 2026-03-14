@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification OTP</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .otp-box {
+            font-size: 26px;
+            font-weight: bold;
+            color: #007bff;
+            border: 3px dashed #007bff;
+            background: #f8f9fa;
+            padding: 12px;
+            display: inline-block;
+            border-radius: 8px;
+            letter-spacing: 3px;
+            margin: 15px 0;
+        }
+
+        .footer {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://pixeldev.in/assets/img/logos.png" alt="App Logo" width="50" style="vertical-align: middle; margin-right: 10px;">
+            JetShop
+        </div>
+        <p style="font-size: 18px; color: #444;">Hello <strong>{USERNAME}</strong>,</p>
+        <p style="font-size: 16px; color: #555;">Use the OTP below to verify your email:</p>
+        <div class="otp-box">{OTP_CODE}</div>
+        <p style="font-size: 14px; color: #777;">This OTP is valid for <strong>10 minutes</strong>. Do not share it with
+            anyone.</p>
+
+        <p class="message">Thank you,<br><br><strong>Team JetShop</strong></p>
+
+        <p class="footer">&copy; {YEAR} JetShop by PixelDev. All rights reserved.</p>
+    </div>
+</body>
+
+</html>

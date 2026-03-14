@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: jetshop-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=jetshop
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - jetshop-network
+
+  maildev:
+    image: maildev/maildev
+    container_name: jetshop-maildev
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+    networks:
+      - jetshop-network
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: jetshop-zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      - jetshop-network
+
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: jetshop-kafka
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+    depends_on:
+      - zookeeper
+    networks:
+      - jetshop-network
+
+networks:
+  jetshop-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
