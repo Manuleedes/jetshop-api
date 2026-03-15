@@ -1,11 +1,14 @@
 server:
   port: 8080
 
+app:
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jetshop
-    username: postgres
-    password: postgres
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/jetshop}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -27,7 +30,7 @@ spring:
             enable: false
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     consumer:
       group-id: jetshop-group
       auto-offset-reset: earliest

@@ -6,6 +6,7 @@ import com.lidigu.entity.ProductCategory;
 import com.lidigu.mapper.CategoryMapper;
 import com.lidigu.repository.ProductCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,8 @@ public class CategoryService {
     @Autowired
     private CategoryMapper categoryMapper;
 
-    private final String iconBaseUrl = "https://pixeldev.in/webservices/e_commerce/admin/";
+    @Value("${app.base-url}")
+    private String iconBaseUrl;
 
     public Object getAllCategories() {
         try {
